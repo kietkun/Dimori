@@ -50,7 +50,7 @@ const YourRentals = () => {
       <div
         className="homeContainer"
         style={{
-          backgroundImage: `url(${bg})`,
+          // backgroundImage: `url(${bg})`,
           width: "100%",
           opacity: "0.9"
         }}

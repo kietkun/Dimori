@@ -8,7 +8,9 @@ To install library needed
     yarn
 ```
 
-To deploy smart contract to ganache net work
+# In this project we don't need to deploy, just replace PRIVATE_KEY on .env file and test smart contract before we run it on web
+
+To deploy smart contract to ganache network
 ```sh
     cd hardhat
     npx hardhat run scripts/deploy-dimori.js --network ganache

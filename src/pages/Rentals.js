@@ -112,56 +112,57 @@ const Rentals = () => {
 
   return (
     <>
-      <div className="topBanner">
-        <div>
-          <Link to="/">
-            <img
-              className="logo"
-              src={logo}
-              alt="logo"
-              style={{ height: "auto" }}
-            ></img>
-          </Link>
-        </div>
-        <div className="searchReminder">
-          <div className="filter">{searchFilters.destination}</div>
-          <div className="vl" />
-          <div className="filter">
-            {`${searchFilters.checkIn.toLocaleString("default", {
-              month: "short",
-            })} ${searchFilters.checkIn.toLocaleString("default", {
-              day: "2-digit",
-            })}  -  ${searchFilters.checkOut.toLocaleString("default", {
-              month: "short",
-            })}  ${searchFilters.checkOut.toLocaleString("default", {
-              day: "2-digit",
-            })} `}
+      <div
+        className="homeContainer"
+        styles={{
+            backgroundImage: `url(${bg})`,
+            width: "100%",
+            opacity: "0.9"
+        }
+      }
+      >
+        <div className="topBanner">
+          <div>
+            <Link to="/">
+              <img
+                className="logo"
+                src={logo}
+                alt="logo"
+                style={{ height: "auto" }}
+              ></img>
+            </Link>
           </div>
-          <div className="vl" />
-          <div className="filter">{searchFilters.theme} Theme</div>
-          <div className="searchFiltersIcon">
-            <SearchIcon sx={{ color: "#2b2623" }} />
+          <div className="searchReminder">
+            <div className="filter">{searchFilters.destination}</div>
+            <div className="vl" />
+            <div className="filter">
+              {`${searchFilters.checkIn.toLocaleString("default", {
+                month: "short",
+              })} ${searchFilters.checkIn.toLocaleString("default", {
+                day: "2-digit",
+              })}  -  ${searchFilters.checkOut.toLocaleString("default", {
+                month: "short",
+              })}  ${searchFilters.checkOut.toLocaleString("default", {
+                day: "2-digit",
+              })} `}
+            </div>
+            <div className="vl" />
+            <div className="filter">{searchFilters.theme} Theme</div>
+            <div className="searchFiltersIcon">
+              <SearchIcon sx={{ color: "#2b2623" }} />
+            </div>
+          </div>
+          <div className="lrContainers">
+            <Account />
           </div>
         </div>
-        <div className="lrContainers">
-          <Account />
-        </div>
-      </div>
 
-      <hr className="line" />
-      <div className="rentalsContent" class="div_block">
-        {rentalsList.length !== 0 ? (
-          rentalsList.map((e, i) => {
-            return (
-              <>
-                <div
-                  className="homeContainer"
-                  style={{
-                    backgroundImage: `url(${bg})`,
-                    width: "100%",
-                    opacity: "0.9",
-                  }}
-                >
+        <hr className="line" />
+        <div className="rentalsContent" class="div_block">
+          {rentalsList.length !== 0 ? (
+            rentalsList.map((e, i) => {
+              return (
+                <>
                   <hr className="line2" />
                   <br />
                   <img className="rentalImg" src={e.imgUrl}></img>
@@ -190,15 +191,15 @@ const Rentals = () => {
                       <div className="price">Price : {e.price}$ per day</div>
                     </div>
                   </div>
-                </div>
-              </>
-            );
-          })
-        ) : (
-          <div style={{ textAlign: "center", paddingTop: "30%" }}>
-            <p>No rentals found for your search</p>
-          </div>
-        )}
+                </>
+              );
+            })
+          ) : (
+            <div style={{ textAlign: "center", paddingTop: "30%" }}>
+              <p>No rentals found for your search</p>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

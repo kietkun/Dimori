@@ -149,19 +149,12 @@ const Rentals = () => {
       </div>
 
       <hr className="line" />
-      <br />
-      <br />
       <div className="addRentalContent">
         <div className="addRentalContentL" style={{ alignItems: "center" }}>
-          <h2 style={{ textAlign: "center" }}>Add your Rental</h2>
+          <h2 class="headerText">Add your Rental</h2>
           <table className="pure-table pure-table-horizontal">
             <br />
             <tr>
-              <td></td>
-              <td>
-                <label>Name: </label>
-              </td>
-              <td></td>
               <td>
                 <Form.Control
                   type="text"
@@ -170,17 +163,12 @@ const Rentals = () => {
                     setFormInput({ ...formInput, name: e.target.value });
                   }}
                   required={true}
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td>
-                <label>City: </label>
-              </td>
-              <td></td>
               <td>
                 <Form.Control
                   type="text"
@@ -190,17 +178,12 @@ const Rentals = () => {
                     setFormInput({ ...formInput, city: e.target.value });
                   }}
                   required
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td>
-                <label>Theme: </label>
-              </td>
-              <td></td>
               <td>
                 <Form.Control
                   type="text"
@@ -210,17 +193,12 @@ const Rentals = () => {
                     setFormInput({ ...formInput, theme: e.target.value });
                   }}
                   required
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td>
-                <label>Location Address: </label>
-              </td>
-              <td></td>
               <td>
                 <Form.Control
                   type="text"
@@ -230,17 +208,12 @@ const Rentals = () => {
                     setFormInput({ ...formInput, contactAddress: e.target.value });
                   }}
                   required
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td>
-                <label>Latitude : </label>
-              </td>
-              <td></td>
               <td>
                 <Form.Control
                   type="text"
@@ -249,17 +222,12 @@ const Rentals = () => {
                   onChange={(e) => {
                     setFormInput({ ...formInput, latitude: e.target.value });
                   }}
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td>
-                <label>Longitude : </label>
-              </td>
-              <td></td>
               <td>
                 <Form.Control
                   type="text"
@@ -268,17 +236,12 @@ const Rentals = () => {
                   onChange={(e) => {
                     setFormInput({ ...formInput, longitude: e.target.value });
                   }}
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td>
-                <label>Description : </label>
-              </td>
-              <td></td>
               <td>
                 <Form.Control
                   as="textarea"
@@ -288,17 +251,12 @@ const Rentals = () => {
                   onChange={(e) => {
                     setFormInput({ ...formInput, description: e.target.value });
                   }}
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td>
-                <label>Max number of guests : </label>
-              </td>
-              <td></td>
               <td>
                 <Form.Control
                   type="number"
@@ -310,17 +268,12 @@ const Rentals = () => {
                       numberGuests: Number(e.target.value),
                     })
                   }
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td>
-                <label>Price per day: </label>
-              </td>
-              <td></td>
               <td>
                 <Form.Control
                   type="number"
@@ -329,29 +282,25 @@ const Rentals = () => {
                   onChange={(e) =>
                     setFormInput({ ...formInput, pricePerDay: e.target.value })
                   }
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td colspan="3">
+              <td>
                 <Form.Control
                   type="file"
                   name="file"
                   onChange={(e) => {
                     getImage(e);
                   }}
+                  className="marginTable"
                 />
               </td>
-              <td></td>
             </tr>
             <br />
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
               <td>
                 {imagePreview && (
                   <div style={{ textAlign: "center" }}>
@@ -364,7 +313,6 @@ const Rentals = () => {
                   </div>
                 )}
               </td>
-              <td></td>
             </tr>
           </table>
           <br />

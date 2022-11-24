@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 function RentalsMap({ locations, google, setHighLight }) {
     const [center, setCenter] = useState();
     useEffect(() => {
+        debugger;
         var arr = Object.keys(locations);
         var getLat = (key) => locations[key]["lat"];
         var avgLat = arr.reduce((a, c) => a + Number(getLat(c)), 0) / arr.length;
@@ -21,8 +22,11 @@ function RentalsMap({ locations, google, setHighLight }) {
                 <Map
                     google={google}
                     containerStyle={{
-                        width: "50vw",
-                        height: "calc(100vh - 135px)",
+                        width: "45vw",
+                        height: "55vh",
+                        marginLeft:"3%",
+                        marginRight:"3%",
+                        border: '2px solid red'
                     }}
                     center={center}
                     initialCenter={locations[0]}

@@ -3,7 +3,6 @@ import "./YourRentals.css";
 import { Link } from "react-router-dom";
 import { ethers, utils } from "ethers";
 import logo from "../images/dimori-logo.png";
-import bg from "../images/dimori-bg4.JPG";
 import { useSelector } from "react-redux";
 import Account from "../components/Account";
 
@@ -46,15 +45,17 @@ const YourRentals = () => {
   }, [data.account]);
 
   return (
-    <>
-      <div
-        className="homeContainer"
-        style={{
-          // backgroundImage: `url(${bg})`,
-          width: "100%",
-          opacity: "0.9"
-        }}
-      >
+    
+      // <div
+      //   className="homeContainer"
+      //   style={{
+      //     backgroundColor:"black",
+      //     width: "100%",
+      //     opacity: "0.9",
+      //     backgroundAttachment: "scroll"
+      //   }}
+      // >
+        <>
         <div className="topBanner">
           <div>
             <Link to="/">
@@ -67,19 +68,20 @@ const YourRentals = () => {
             </Link>
           </div>
           <div>
-            <h3 style={{ textAlign: "center" }}>Your Rentals</h3>
+            <h3 class="headerText">Your Rentals</h3>
           </div>
           <div className="lrContainers">
             <Account />
           </div>
         </div>
         <hr className="line" />
-        <div className="rentalsContent" class="div_block">
+        <div className="rentalsContent" class="newContainer">
           {propertiesList.length !== 0 ? (
             propertiesList.map((e, i) => {
               return (
                 <>
                   <hr className="line2" />
+                  <br/>
                   <div className="rentalDiv" key={i}>
                     <img className="rentalImg" src={e.imgUrl}></img>
                     <div className="rentalInfo">
@@ -114,8 +116,9 @@ const YourRentals = () => {
             </a>
           </div>
         </div>
-      </div>
+      
     </>
+    // </div>
   );
 };
 export default YourRentals;

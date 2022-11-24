@@ -6,6 +6,7 @@ import { ethers, utils } from "ethers"
 import { Modal } from "react-bootstrap"
 import { Button, Box } from "@mui/material"
 import Web3Modal from "web3modal"
+import logo from "../images/dimori-logo.png";
 
 import networks from "../utils/networksMap.json"
 import Identicon from "./Identicon";
@@ -93,15 +94,15 @@ function Account() {
                         <Identicon account={data.account} />
                     </Button>
                     <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>User</Modal.Title>
+                        <Modal.Header closeButton style={{backgroundColor:"blanchedalmond"}}>
+                            <Modal.Title>Account information</Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>
-                            <p>Account: {data.account}</p>
-                            <p>Balance: {data.balance && parseFloat(data.balance).toFixed(4)} ETH</p>
-                            <p>Network: {data.network}</p>
+                        <Modal.Body style={{backgroundColor:"blanchedalmond"}}>
+                            <p>Wallet address : {data.account}</p>
+                            <p>Your account balance : {data.balance && parseFloat(data.balance).toFixed(4)} ETH</p>
+                            <p>Your're connect to : {data.network} network</p>
                         </Modal.Body>
-                        <Modal.Footer>
+                        <Modal.Footer style={{backgroundColor:"blanchedalmond"}}>
                             <a className="btn btn-primary" href={"/booked-schedules"} role="button">All Booked</a>
                             <a className="btn btn-primary" href={"/your-rentals"} role="button">Your Rentals</a>
                             <Button variant="contained" color="error" onClick={Disconnect}>

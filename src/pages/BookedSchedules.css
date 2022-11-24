@@ -14,6 +14,11 @@
     height: calc(100vh - 135px);
 }
 
+.headerText{
+    text-align: "center";
+    font-family:"Roboto, Helvetica, sans-serif";
+}
+
 .rentalsContentL {
     width: 50%;
     padding: 30px;

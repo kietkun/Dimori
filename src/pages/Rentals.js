@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { ethers, utils } from "ethers";
 import { useLocation } from "react-router";
 import logo from "../images/dimori-logo.png";
-import bg from "../images/dimori-bg6.jpg";
+import bg from "../images/dimori-bg1.JPG";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button, CircularProgress } from "@mui/material";
 import Account from "../components/Account";
@@ -112,15 +112,6 @@ const Rentals = () => {
 
   return (
     <>
-      <div
-        className="homeContainer"
-        styles={{
-            backgroundImage: `url(${bg})`,
-            width: "100%",
-            opacity: "0.9"
-        }
-      }
-      >
         <div className="topBanner">
           <div>
             <Link to="/">
@@ -158,7 +149,8 @@ const Rentals = () => {
         </div>
 
         <hr className="line" />
-        <div className="rentalsContent" class="div_block">
+        <div className="rentalsContent" 
+        class="newContainer">
           {rentalsList.length !== 0 ? (
             rentalsList.map((e, i) => {
               return (
@@ -177,7 +169,7 @@ const Rentals = () => {
                     <div className="bottomButton">
                       <Button
                         variant="contained"
-                        style={{ backgroundColor: "#00afd1" }}
+                        style={{ backgroundColor: "#00afd1"}}
                         onClick={() => {
                           bookProperty(e.id, e.price);
                         }}
@@ -200,7 +192,6 @@ const Rentals = () => {
             </div>
           )}
         </div>
-      </div>
     </>
   );
 };

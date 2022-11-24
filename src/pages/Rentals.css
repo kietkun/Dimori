@@ -11,9 +11,6 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.div_block {
-    display: inline-block;
-}
 
 .filter {
     font-size: 14px;
@@ -25,6 +22,19 @@
     background-color: #00afd1;
     padding: 7px;
     border-radius: 50%;
+}
+
+body{
+    background-color: blanchedalmond;
+}
+
+.newContainer{
+    width: 100%;
+    padding: 0 15% 5% 15%;
+    background-color: rgba(255, 355, 255, 0.2);
+    backdrop-filter: blur(10px);
+    font-size: 20px;
+    display: inline-block;
 }
 
 .btn-primary,
@@ -111,13 +121,14 @@
 }
 
 .rentalTitle {
-    font-size: 23px;
+    font-size: 35px;
     margin-bottom: 15px;
-    ;
+    font-family: "ui-monospace";
 }
 
 .rentalDesc {
     color: gray;
+    padding: 1% 5% 0 5%;
 }
 
 .bottomButton {
@@ -133,5 +144,9 @@
     justify-content: end;
     gap: 5px;
     color: #808080;
-    font-size: 12px;
+    font-size: 25px;
+}
+.headerText{
+    text-align: "center";
+    font-family:"Roboto, Helvetica, sans-serif";
 }

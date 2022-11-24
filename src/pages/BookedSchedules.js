@@ -37,6 +37,7 @@ const BookedSchedules = () => {
 
         let myBookings = _rentalBookings.filter((b) => b[0] == data.account);
         if (myBookings.length !== 0) {
+          debugger;
           const latestBook = myBookings[0];
           const item = {
             id: Number(r[0]),
@@ -56,12 +57,12 @@ const BookedSchedules = () => {
     setRentalsList(myRentals);
     let cords = rentals.map((r) => {
       return {
-          lat: Number(r[4]),
-          lng: Number(r[5])
-      }
-  })
+        lat: Number(r[6]),
+        lng: Number(r[7]),
+      };
+    });
 
-  setCoordinates(cords)
+    setCoordinates(cords);
   };
 
   useEffect(() => {
@@ -70,77 +71,81 @@ const BookedSchedules = () => {
 
   return (
     <>
-    <div className="homeContainer" style={{
-        backgroundImage: `url(${bg})`,
-        width: "100%",
-        opacity: "0.9"
-      }}>
-      <div className="topBanner">
-        <div>
-          <Link to="/">
-            <img
-              className="logo"
-              src={logo}
-              alt="logo"
-              style={{ height: "auto" }}
-            ></img>
-          </Link>
-        </div>
-        <div>
-          <h3 style={{ textAlign: "center" }}>All booked schedules</h3>
-        </div>
-        <div className="lrContainers">
-          <Account />
-        </div>
-      </div>
-
-      <hr className="line" />
-      <div className="rentalsContent">
-      <div className="rentalsContentL">
-        {rentalsList.length !== 0 ? (
-          rentalsList.map((e, i) => {
-            return (
-              <>
-                <hr className="line2" />
-                <div className={highLight == i ? "rentalDivH " : "rentalDiv"} key={i}>
-                  <img className="rentalImg" src={e.imgUrl}></img>
-                  <div className="rentalInfo">
-                    <div className="rentalTitle">{e.name}</div>
-                    <div className="rentalDesc">ở in {e.city} á nè</div>
-                    <div className="rentalDesc">màu (theme) {e.theme} thấy được không</div>
-                    <div className="rentalDesc">tau để địa chỉ ở đây (at) {e.address}</div>
-                    <div className="rentalDesc">
-                      Mi đã đặt chỗ ở tụi tau ngày ni nì (Booked dates):
-                      {` ${e.startDate.toLocaleString("default", {
-                        month: "short",
-                      })} ${e.startDate.toLocaleString("default", {
-                        day: "2-digit",
-                      })}  -  ${e.endDate.toLocaleString("default", {
-                        month: "short",
-                      })}  ${e.endDate.toLocaleString("default", {
-                        day: "2-digit",
-                      })} `}
-                    </div>
-                    <br />
-                    <br />
-                    <div className="price">{e.price}$</div>
-                  </div>
-                </div>
-              </>
-            );
-          })
-        ) : (
-          <div style={{ textAlign: "center", paddingTop: "30%" }}>
-            <p>You have no reservation yet</p>
+        <div className="topBanner">
+          <div>
+            <Link to="/">
+              <img
+                className="logo"
+                src={logo}
+                alt="logo"
+                style={{ height: "auto" }}
+              ></img>
+            </Link>
           </div>
-        )}
-      </div>
-      <div className="rentalsContentR">
-                <div>Rentals on maps</div>
-                    <RentalsMap locations={coordinates} setHighLight={setHighLight} />
-                </div>
-                </div>
-                </div>
+          <div>
+            <h3 class="headerText">All booked schedules</h3>
+          </div>
+          <div className="lrContainers">
+            <Account />
+          </div>
+        </div>
+
+        <hr className="line" />
+        <div className="rentalsContent">
+        <div className="rentalsContentR">
+          <div style={{ textAlign: "center", paddingTop: "3%" }}>
+                <p>Rentals on maps</p>
+              </div>
+            <RentalsMap locations={coordinates} setHighLight={setHighLight} style={{border: '2px dotted red'}} />
+          </div>
+          <div className="rentalsContentR">
+            {rentalsList.length !== 0 ? (
+              rentalsList.map((e, i) => {
+                return (
+                  <>
+                    <hr className="line2" />
+                    <div
+                      className={highLight == i ? "rentalDivH " : "rentalDiv"}
+                      key={i}
+                    >
+                      <img className="rentalImg" src={e.imgUrl}></img>
+                      <div className="rentalInfo">
+                        <div className="rentalTitle">{e.name}</div>
+                        <div className="rentalDesc">ở in {e.city} á nè</div>
+                        <div className="rentalDesc">
+                          màu (theme) {e.theme} thấy được không
+                        </div>
+                        <div className="rentalDesc">
+                          tau để địa chỉ ở đây (at) {e.address}
+                        </div>
+                        <div className="rentalDesc">
+                          Mi đã đặt chỗ ở tụi tau ngày ni nì (Booked dates):
+                          {` ${e.startDate.toLocaleString("default", {
+                            month: "short",
+                          })} ${e.startDate.toLocaleString("default", {
+                            day: "2-digit",
+                          })}  -  ${e.endDate.toLocaleString("default", {
+                            month: "short",
+                          })}  ${e.endDate.toLocaleString("default", {
+                            day: "2-digit",
+                          })} `}
+                        </div>
+                        <br />
+                        <br />
+                        <div className="price">{e.price}$</div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })
+            ) : (
+              <div style={{ textAlign: "center", paddingTop: "30%" }}>
+                <p>You have no reservation yet</p>
+              </div>
+            )}
+          </div>
+          
+        </div>
     </>
   );
 };

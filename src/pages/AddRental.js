@@ -158,7 +158,7 @@ const Rentals = () => {
               <td>
                 <Form.Control
                   type="text"
-                  placeholder="Tên chi?"
+                  placeholder="Tên chi? (Name)"
                   onChange={(e) => {
                     setFormInput({ ...formInput, name: e.target.value });
                   }}
@@ -173,7 +173,7 @@ const Rentals = () => {
                 <Form.Control
                   type="text"
                   maxLength={30}
-                  placeholder="Ở mô?"
+                  placeholder="Ở mô? (City)"
                   onChange={(e) => {
                     setFormInput({ ...formInput, city: e.target.value });
                   }}
@@ -188,7 +188,7 @@ const Rentals = () => {
                 <Form.Control
                   type="text"
                   maxLength={30}
-                  placeholder="Có gì zui?"
+                  placeholder="Có gì zui? (Theme)"
                   onChange={(e) => {
                     setFormInput({ ...formInput, theme: e.target.value });
                   }}
@@ -203,7 +203,7 @@ const Rentals = () => {
                 <Form.Control
                   type="text"
                   maxLength={255}
-                  placeholder="Có gì zui?"
+                  placeholder="Ở lộ mô? (Address)"
                   onChange={(e) => {
                     setFormInput({ ...formInput, contactAddress: e.target.value });
                   }}
@@ -218,7 +218,7 @@ const Rentals = () => {
                 <Form.Control
                   type="text"
                   maxLength={30}
-                  placeholder="Kinh độ"
+                  placeholder="Kinh độ (Longtitude)"
                   onChange={(e) => {
                     setFormInput({ ...formInput, latitude: e.target.value });
                   }}
@@ -232,7 +232,7 @@ const Rentals = () => {
                 <Form.Control
                   type="text"
                   maxLength={30}
-                  placeholder="Vĩ độ"
+                  placeholder="Vĩ độ (Latitude)"
                   onChange={(e) => {
                     setFormInput({ ...formInput, longitude: e.target.value });
                   }}
@@ -247,7 +247,7 @@ const Rentals = () => {
                   as="textarea"
                   rows={5}
                   maxLength={2000}
-                  placeholder="Kể coi tụi bây có chi?"
+                  placeholder="Kể coi tụi bây có chi? (Description)"
                   onChange={(e) => {
                     setFormInput({ ...formInput, description: e.target.value });
                   }}
@@ -261,7 +261,7 @@ const Rentals = () => {
                 <Form.Control
                   type="number"
                   min={1}
-                  placeholder="Chỗ tụi bây chứa được mấy người?"
+                  placeholder="Chỗ tụi bây chứa được mấy người? (Max number)"
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
@@ -278,7 +278,7 @@ const Rentals = () => {
                 <Form.Control
                   type="number"
                   min={0}
-                  placeholder="Một ngày trả bây mấy $"
+                  placeholder="Một ngày trả bây mấy $ (Price)"
                   onChange={(e) =>
                     setFormInput({ ...formInput, pricePerDay: e.target.value })
                   }

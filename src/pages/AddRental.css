@@ -26,6 +26,10 @@
     font-family:"Roboto, Helvetica, sans-serif";
 }
 
+body{
+    background-color: white;
+}
+
 .searchFiltersIcon {
     background-color: #00afd1;
     padding: 7px;

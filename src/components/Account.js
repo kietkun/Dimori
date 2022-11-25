@@ -93,15 +93,15 @@ function Account() {
                         <Identicon account={data.account} />
                     </Button>
                     <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton style={{backgroundColor:"blanchedalmond"}}>
+                        <Modal.Header closeButton style={{backgroundColor:"#aae6ee"}}>
                             <Modal.Title>Account information</Modal.Title>
                         </Modal.Header>
-                        <Modal.Body style={{backgroundColor:"blanchedalmond"}}>
+                        <Modal.Body style={{backgroundColor:"#aae6ee"}}>
                             <p>Wallet address : {data.account}</p>
                             <p>Your account balance : {data.balance && parseFloat(data.balance).toFixed(4)} </p>
                             <p>Your're connect to : {data.network} </p>
                         </Modal.Body>
-                        <Modal.Footer style={{backgroundColor:"blanchedalmond"}}>
+                        <Modal.Footer style={{backgroundColor:"#aae6ee"}}>
                             <a className="btn btn-primary" href={"/booked-schedules"} role="button">All Booked</a>
                             <a className="btn btn-primary" href={"/your-rentals"} role="button">Your Rentals</a>
                             <Button variant="contained" color="error" onClick={Disconnect}>

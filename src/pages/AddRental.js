@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./AddRental.css";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { ethers, utils } from "ethers";
 import { Buffer } from "buffer";
 import { Form } from "react-bootstrap";
-import { Button, CircularProgress } from "@mui/material";
+import { Button, CircularProgress, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import Account from "../components/Account";
 
 import logo from "../images/dimori-logo.png";
@@ -16,7 +16,6 @@ import bg from "../images/add-bg.png";
 import DimoriSmartContract from "../artifacts/contracts/DimoriMain.sol/DimoriMain.json";
 import { contractAddress, networkDeployedTo } from "../utils/contracts-config";
 import networksMap from "../utils/networksMap.json";
-
 const client = require("ipfs-http-client");
 
 const projectId = "2HrcvAMNAkZmAGwQO6CfyZPWAw0"; // <---------- your Infura Project ID
@@ -49,14 +48,21 @@ const Rentals = () => {
   const [formInput, setFormInput] = useState({
     name: "",
     city: "",
-    theme : "",
-    contactAddress : "",
+    theme: "",
+    contactAddress: "",
     latitude: "",
     longitude: "",
     description: "",
     numberGuests: 0,
     pricePerDay: 0,
   });
+
+  const getInitialState = () => {
+    const value = "Orange";
+    return value;
+  };
+
+  const [value, setValue] = useState(getInitialState);
 
   const getImage = async (e) => {
     e.preventDefault();
@@ -90,7 +96,7 @@ const Rentals = () => {
             DimoriSmartContract.abi,
             signer
           );
-
+          ;
           const listingFee = DimoriContract.callStatic.listingFee();
           //handle images
           const addedFile = await ipfsClient.add(image);
@@ -99,7 +105,7 @@ const Rentals = () => {
           const add_tx = await DimoriContract.addRental(
             formInput.name,
             formInput.city,
-            formInput.theme,
+            value,
             formInput.contactAddress,
             formInput.latitude,
             formInput.longitude,
@@ -183,15 +189,24 @@ const Rentals = () => {
             <br />
             <tr>
               <td>
-                <Form.Control
-                  type="text"
-                  maxLength={30}
-                  placeholder="Có gì zui? (Theme)"
-                  onChange={(e) => {
-                    setFormInput({ ...formInput, theme: e.target.value });
-                  }}
-                  required
-                />
+                <FormControl variant="standard" sx={{ m: 1, minWidth: 300 }}>
+                  <InputLabel id="theme-standard-label">Tụi bây có chi vui (Theme)</InputLabel>
+                  <Select
+                    value={value}
+                    onChange={(e) => {
+                      setValue(e.target.value);
+                    }}
+                    required
+                  >
+                    <MenuItem value="Peace">Peace</MenuItem>
+                    <MenuItem value="Village">Village</MenuItem>
+                    <MenuItem value="Royal">Royal</MenuItem>
+                    <MenuItem value="Nature">Nature</MenuItem>
+                    <MenuItem value="Arts">Arts</MenuItem>
+                    <MenuItem value="Green">Green</MenuItem>
+                    <MenuItem value="History">History</MenuItem>
+                  </Select>
+                </FormControl>
               </td>
             </tr>
             <br />
@@ -202,7 +217,10 @@ const Rentals = () => {
                   maxLength={255}
                   placeholder="Ở lộ mô? (Address)"
                   onChange={(e) => {
-                    setFormInput({ ...formInput, contactAddress: e.target.value });
+                    setFormInput({
+                      ...formInput,
+                      contactAddress: e.target.value,
+                    });
                   }}
                   required
                 />
@@ -298,7 +316,7 @@ const Rentals = () => {
                       className="rounded mt-4"
                       width="350"
                       src={URL.createObjectURL(imagePreview)}
-                      style={{ margin : "0 15% 0 15%", display: "block" }}
+                      style={{ margin: "0 15% 0 15%", display: "block" }}
                     />
                   </div>
                 )}

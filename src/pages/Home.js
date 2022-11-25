@@ -9,7 +9,7 @@ import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
-import { TextField, Button, Input } from "@mui/material";
+import { TextField, Button, Input, Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
 import { networkDeployedTo } from "../utils/contracts-config";
@@ -18,9 +18,16 @@ import networksMap from "../utils/networksMap.json";
 const Home = () => {
   const data = useSelector((state) => state.blockchain.value)
 
+  var current = new Date();
   const [info, setInfo] = useState(
-    { destination: "", checkIn: new Date(), checkOut: new Date(), theme: "" }
+    { destination: "", current, checkOut: new Date(current.getTime() + 86400000), theme: "" }
   )
+  const getInitialState = () => {
+    const value = "Orange";
+    return value;
+  };
+
+  const [value, setValue] = useState(getInitialState);
 
   return (
     <>
@@ -96,15 +103,25 @@ const Home = () => {
 
           <div className="vl" />
           <div className="inputs">
-            <Input
-              required={true}
-              name="AddTheme"
-              placeholder="Theme"
-              type="text"
-              onChange={(e) => {
-                setInfo({ ...info, theme: e.target.value })
-              }}
-            />
+          <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="theme-standard-label">Theme</InputLabel>
+              <Select
+                labelId="theme-standard-label"
+                id="theme-standard"
+                    value={value} onChange={(e) => {
+                      setValue(e.target.value);
+                    }}
+                    >
+                    <MenuItem value=""><em>None</em></MenuItem>
+                    <MenuItem value="Peace">Peace</MenuItem>
+                    <MenuItem value="Village">Village</MenuItem>
+                    <MenuItem value="Royal">Royal</MenuItem>
+                    <MenuItem value="Nature">Nature</MenuItem>
+                    <MenuItem value="Arts">Arts</MenuItem>
+                    <MenuItem value="Green">Green</MenuItem>
+                    <MenuItem value="History">History</MenuItem>
+                  </Select>
+                  </FormControl>
           </div>
           {data.network === networksMap[networkDeployedTo] ? (
             <Link to={"/rentals"} state={{

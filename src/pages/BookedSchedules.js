@@ -37,7 +37,7 @@ const BookedSchedules = () => {
 
         let myBookings = _rentalBookings.filter((b) => b[0] == data.account);
         if (myBookings.length !== 0) {
-          debugger;
+          ;
           const latestBook = myBookings[0];
           const item = {
             id: Number(r[0]),
@@ -61,7 +61,7 @@ const BookedSchedules = () => {
         lng: Number(r[7]),
       };
     });
-    debugger;
+    ;
     setCoordinates(cords);
   };
 
@@ -82,9 +82,6 @@ const BookedSchedules = () => {
               ></img>
             </Link>
           </div>
-          <div>
-            <h3 class="headerText">All booked schedules</h3>
-          </div>
           <div className="lrContainers">
             <Account />
           </div>
@@ -94,7 +91,7 @@ const BookedSchedules = () => {
         <div className="rentalsContent">
         <div className="rentalsContentR">
           <div style={{ textAlign: "center", paddingTop: "3%" }}>
-                <p>Rentals on maps</p>
+                <p className="rentalTitle">Rentals on maps</p>
               </div>
             <RentalsMap locations={coordinates} setHighLight={setHighLight} style={{border: '2px dotted red'}} />
           </div>

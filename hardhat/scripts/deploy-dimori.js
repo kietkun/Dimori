@@ -3,12 +3,11 @@ const fs = require('fs');
 const fse = require('fs-extra');
 const { verify } = require('../utils/verify')
 
-const LOCAL_NETWORKS = ["localhost", "ganache"]
+const LOCAL_NETWORKS = ["https://rpc-mumbai.matic.today/", "mumbai"]
 
 async function deployMock() {
   const DECIMALS = "8"
   const INITIAL_PRICE = "200000000000"
-
   const Mock = await hre.ethers.getContractFactory("MockV3Aggregator")
 
   console.log("Deploying price feed mock");
@@ -22,7 +21,7 @@ async function deployMock() {
 
 async function main() {
   /* these two lines deploy the contract to the network */
-  let listingFee = hre.ethers.utils.parseEther("0.001", "ether");
+  let listingFee = hre.ethers.utils.parseEther("0.001", "matic");
   var priceFeedAddress;
   if (LOCAL_NETWORKS.includes(hre.network.name)) {
     priceFeedAddress = await deployMock()

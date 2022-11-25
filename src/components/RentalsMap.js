@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 function RentalsMap({ locations, google, setHighLight }) {
     const [center, setCenter] = useState();
     useEffect(() => {
-        debugger;
         var arr = Object.keys(locations);
         var getLat = (key) => locations[key]["lat"];
         var avgLat = arr.reduce((a, c) => a + Number(getLat(c)), 0) / arr.length;
@@ -43,5 +42,5 @@ function RentalsMap({ locations, google, setHighLight }) {
 }
 
 export default GoogleApiWrapper({
-    apiKey: "AIzaSyAWzJ9lHQRST5g1tgHehLK0z4crnI3eJ0g",
+    apiKey: "AIzaSyC1fzGlggsK3ZT56hp-NX5bj-BqZ3iOEJU",
 })(RentalsMap);

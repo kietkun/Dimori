@@ -61,7 +61,7 @@ const BookedSchedules = () => {
         lng: Number(r[7]),
       };
     });
-
+    debugger;
     setCoordinates(cords);
   };
 
@@ -104,6 +104,7 @@ const BookedSchedules = () => {
                 return (
                   <>
                     <hr className="line2" />
+                    <br/>
                     <div
                       className={highLight == i ? "rentalDivH " : "rentalDiv"}
                       key={i}

@@ -55,16 +55,16 @@ module.exports = {
       url: "http://127.0.0.1:7545",
       accounts: [process.env.PRIVATE_KEY],
     },
-    // mumbai: {
-    //   url: MUMBAI_RPC_URL,
-    //   accounts: [process.env.PRIVATE_KEY],
-    //   chainId: 80001,
-    // },
-    // polygon: {
-    //   url: POLYGON_RPC_URL,
-    //   accounts: [process.env.PRIVATE_KEY]
-    //   chainId: 137,
-    // }
+    polygon: {
+      url: POLYGON_RPC_URL,
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 1402
+    },
+    mumbai: {
+      url: MUMBAI_RPC_URL,
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 80001
+    }
   },
   paths: {
     artifacts: "./artifacts",

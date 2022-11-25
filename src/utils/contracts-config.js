@@ -1,5 +1,5 @@
 
-      export const contractAddress = "0x999Da0CA32463FFcb6D293f68E22594fF16D91AE"
-      export const ownerAddress = "0xfA2bb15C4653028FA599BdA8AEF1e12bbFdff581"
-      export const networkDeployedTo = "1337"
+      export const contractAddress = "0xf415CFA919Db7E828396dddaF803D12DcF87F2f9"
+      export const ownerAddress = "0x3954698510b7de148d23dc3e7Fe6C4F72d8065E5"
+      export const networkDeployedTo = "80001"
     

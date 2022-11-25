@@ -22,6 +22,7 @@ const Rentals = () => {
   const { state: searchFilters } = useLocation();
   const [rentalsList, setRentalsList] = useState([]);
 
+  debugger;
   const getRentalsList = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
     const signer = provider.getSigner();
@@ -32,7 +33,7 @@ const Rentals = () => {
     );
 
     const rentals = await DimoriContract.getRentals();
-
+    
     const items = rentals.map((r) => {
       return {
         id: Number(r[0]),

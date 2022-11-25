@@ -20,10 +20,10 @@ const Home = () => {
 
   var current = new Date();
   const [info, setInfo] = useState(
-    { destination: "", current, checkOut: new Date(current.getTime() + 86400000), theme: "" }
+    { destination: "", checkIn: new Date(current.getTime()), checkOut: new Date(current.getTime() + 86400000) }
   )
   const getInitialState = () => {
-    const value = "Orange";
+    const value = "";
     return value;
   };
 
@@ -128,7 +128,7 @@ const Home = () => {
               destination: info.destination,
               checkIn: info.checkIn,
               checkOut: info.checkOut,
-              theme: info.theme
+              theme: value
             }}>
               <div className="searchButton">
                 <SearchIcon sx={{ color: "#2b2623" }} />

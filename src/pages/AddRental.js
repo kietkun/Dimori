@@ -152,7 +152,7 @@ const Rentals = () => {
       <div className="addRentalContent">
         <div className="addRentalContentL" style={{ alignItems: "center" }}>
           <h2 class="headerText">Add your Rental</h2>
-          <table className="pure-table pure-table-horizontal">
+          <table className="pure-table pure-table-horizontal marginTable">
             <br />
             <tr>
               <td>
@@ -163,7 +163,6 @@ const Rentals = () => {
                     setFormInput({ ...formInput, name: e.target.value });
                   }}
                   required={true}
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -178,7 +177,6 @@ const Rentals = () => {
                     setFormInput({ ...formInput, city: e.target.value });
                   }}
                   required
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -193,7 +191,6 @@ const Rentals = () => {
                     setFormInput({ ...formInput, theme: e.target.value });
                   }}
                   required
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -208,7 +205,6 @@ const Rentals = () => {
                     setFormInput({ ...formInput, contactAddress: e.target.value });
                   }}
                   required
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -222,7 +218,6 @@ const Rentals = () => {
                   onChange={(e) => {
                     setFormInput({ ...formInput, latitude: e.target.value });
                   }}
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -236,7 +231,6 @@ const Rentals = () => {
                   onChange={(e) => {
                     setFormInput({ ...formInput, longitude: e.target.value });
                   }}
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -251,7 +245,6 @@ const Rentals = () => {
                   onChange={(e) => {
                     setFormInput({ ...formInput, description: e.target.value });
                   }}
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -268,7 +261,6 @@ const Rentals = () => {
                       numberGuests: Number(e.target.value),
                     })
                   }
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -282,7 +274,6 @@ const Rentals = () => {
                   onChange={(e) =>
                     setFormInput({ ...formInput, pricePerDay: e.target.value })
                   }
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -295,7 +286,6 @@ const Rentals = () => {
                   onChange={(e) => {
                     getImage(e);
                   }}
-                  className="marginTable"
                 />
               </td>
             </tr>
@@ -308,7 +298,7 @@ const Rentals = () => {
                       className="rounded mt-4"
                       width="350"
                       src={URL.createObjectURL(imagePreview)}
-                      style={{margin: "auto", display: "block"}}
+                      style={{ margin : "0 15% 0 15%", display: "block" }}
                     />
                   </div>
                 )}

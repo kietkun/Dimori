@@ -58,7 +58,7 @@ const Rentals = () => {
   });
 
   const getInitialState = () => {
-    const value = "Orange";
+    const value = "";
     return value;
   };
 

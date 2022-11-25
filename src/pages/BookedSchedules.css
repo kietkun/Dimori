@@ -8,6 +8,10 @@
     margin-right: auto;
   }
 
+  body{
+    background-color: #aae6ee;
+}
+
 .rentalsContent {
     display: flex;
     justify-content: start;

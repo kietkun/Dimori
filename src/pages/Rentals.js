@@ -73,7 +73,7 @@ const Rentals = () => {
 
         const _datefrom = Math.floor(searchFilters.checkIn.getTime() / 1000);
         const _dateto = Math.floor(searchFilters.checkOut.getTime() / 1000);
-        debugger;
+        ;
         const dayToSeconds = 86400;
         const stayDays =
           _dateto - _datefrom == 0 ? dayToSeconds : _dateto - _datefrom;

@@ -23,7 +23,7 @@ describe("DimoriMain.sol", () => {
   const testRentalLatitude = "10";
   const testRentalLongitude = "10";
   const testRentaldescription = "2 guests · 1 bedroom · 1 bed · 1 bath";
-  const testRentalImageURL = "https://testipfsimageurl";
+  const testRentalImageURL = "https://testipfsimageurl/#/";
   const testRentalGuestNumber = 2;
   const testRentalPricePerDay = getAmountInWei(100); // 100$
 

@@ -22,7 +22,6 @@ const Rentals = () => {
   const { state: searchFilters } = useLocation();
   const [rentalsList, setRentalsList] = useState([]);
 
-  debugger;
   const getRentalsList = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
     const signer = provider.getSigner();
@@ -74,7 +73,7 @@ const Rentals = () => {
 
         const _datefrom = Math.floor(searchFilters.checkIn.getTime() / 1000);
         const _dateto = Math.floor(searchFilters.checkOut.getTime() / 1000);
-        ;
+        
         const dayToSeconds = 86400;
         const stayDays =
           _dateto - _datefrom == 0 ? dayToSeconds : _dateto - _datefrom;

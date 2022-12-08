@@ -7,11 +7,11 @@ function App() {
         <div>
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/rentals" element={<Rentals />} />
-                    <Route path="/add-rental" element={<AddRental />} />
-                    <Route path="/booked-schedules" element={<BookedSchedules />} />
-                    <Route path="/your-rentals" element={<YourRentals />} />
+                    <Route path="/#/" element={<Home />} />
+                    <Route path="/#/rentals" element={<Rentals />} />
+                    <Route path="/#/add-rental" element={<AddRental />} />
+                    <Route path="/#/booked-schedules" element={<BookedSchedules />} />
+                    <Route path="/#/your-rentals" element={<YourRentals />} />
                 </Routes>
             </Router>
         </div>

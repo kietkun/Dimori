@@ -102,8 +102,8 @@ function Account() {
                             <p>Your're connect to : {data.network} </p>
                         </Modal.Body>
                         <Modal.Footer style={{backgroundColor:"#aae6ee"}}>
-                            <a className="btn btn-primary" href={"/booked-schedules"} role="button">All Booked</a>
-                            <a className="btn btn-primary" href={"/your-rentals"} role="button">Your Rentals</a>
+                            <a className="btn btn-primary" href={"/#/booked-schedules"} role="button">All Booked</a>
+                            <a className="btn btn-primary" href={"/#/your-rentals"} role="button">Your Rentals</a>
                             <Button variant="contained" color="error" onClick={Disconnect}>
                                 Disconnect
                             </Button>

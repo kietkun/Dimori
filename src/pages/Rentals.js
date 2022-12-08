@@ -92,7 +92,7 @@ const Rentals = () => {
         await book_tx.wait();
 
         setLoading(false);
-        navigate("/booked-schedules");
+        navigate("/#/booked-schedules");
       } catch (err) {
         setLoading(false);
         var x = err.message;

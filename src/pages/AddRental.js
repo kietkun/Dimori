@@ -27,7 +27,7 @@ const auth =
   "Basic " + Buffer.from(projectId + ":" + projectSecret).toString("base64");
 
 const ipfsClient = client.create({
-  host: "ipfs.infura.io/#/",
+  host: "ipfs.infura.io/",
   port: 5001,
   protocol: "https",
   headers: {
@@ -35,7 +35,7 @@ const ipfsClient = client.create({
   },
 });
 
-const ipfsBaseUrl = "https://ipfs.io/#/ipfs/";
+const ipfsBaseUrl = "https://ipfs.io/ipfs/";
 
 const Rentals = () => {
   let navigate = useNavigate();

@@ -120,7 +120,7 @@ const Rentals = () => {
           setImage(null);
           setLoading(false);
 
-          navigate("/your-rentals");
+          navigate("/#/your-rentals");
         } catch (err) {
           window.alert("An error has occured");
           setLoading(false);

@@ -111,7 +111,7 @@ const YourRentals = () => {
             </div>
           )}
           <div style={{ textAlign: "center", paddingTop: "15px" }}>
-            <a className="btn btn-primary" href={"/add-rental"} role="button">
+            <a className="btn btn-primary" href={"/#/add-rental"} role="button">
               Add rental
             </a>
           </div>
